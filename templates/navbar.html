@@ -1,0 +1,40 @@
+{%block navbar%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">WORK</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+               <a class="nav-link" aria-current="page" href="/">Все курсы</a>
+               
+            </li>
+            
+            {% if user.id is not None %}
+            <li class="nav-item">
+               <a class="nav-link" href="/course/create_course/">Создать курс</a>
+            </li>
+            {%endif%}
+            
+      </div>
+      </ul>
+      </li>
+      {% if user.id is not None %}
+      {%block icon%}
+      {%include 'icon.html'%}
+      {%endblock icon%}
+      <h4 class="txtstyle">{{user.first_name}}</h4>
+      <li class="d-flex">
+         <a class="logout logoutbt" href="/accounts/logout">Выход</a>
+      </li>
+      {%else%}
+      <form class="d-flex" >
+         <a class="btnreg btred" type="button" href="/accounts/register">Регистрация</a>
+         <a class="btnlog btlog" type="submit" href="/accounts/login">Вход</a>
+      </form>
+      {%endif%}
+   </div>
+</nav>
+{%endblock navbar%}

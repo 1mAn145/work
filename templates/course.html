@@ -1,0 +1,18 @@
+{%block course%}
+      <div class="row align-items-center">
+        {%for el in course.all%}
+        <div class="col-md-4">  
+        <div class="course">
+          <a href="/course/course_detail/{{el.id}}"><img src="{{el.image.url}}" alt=""></a>
+          <div class="down-content">
+            <a href="/course/course_detail/{{el.id}}" class=""><h4>{{el.title}}</h4></a>
+            <h6>{{el.user}}</h6>
+            <p>{{el.subject}}</p>
+            <span></span>
+          </div>
+        </div>
+        </div>
+        {%endfor%}
+        </div>
+      </div>
+{%endblock course%}

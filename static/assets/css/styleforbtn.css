@@ -1,0 +1,65 @@
+.btnreg{
+    border-color:#4b7aa8 ;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 8px auto;
+    text-align: center;
+    border: 0.5px solid #4b7aa8;
+    padding: 4px 15px;
+    outline: none;
+    color: #4b7aa8;
+    border-radius: 5px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.btred:hover{
+    background: #34495ed0;
+    color: #4b7aa8;
+}
+.btnlog{
+    border-color:#34495e ;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 8px auto;
+    text-align: center;
+    border: 0.5px solid #2ecc71;
+    padding: 4px 20px;
+    outline: none;
+    color: #2ecc71;
+    border-radius: 5px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.btlog:hover{
+    background: #34495ed0;
+    color: #2ecc71;
+}
+
+.logout{
+    border-color:#e67e22 ;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 8px auto;
+    text-align: center;
+    border: 0.5px solid #e67e22;
+    padding: 4px 7px;
+    outline: none;
+    color:white;
+    border-radius: 5px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.logoutbt:hover{
+    background:#d36a0f91 ;
+    color: white;
+}
+.txtstyle{
+    color: white;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 4px;
+    font-weight: 3100;
+}

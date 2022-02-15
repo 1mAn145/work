@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'assets/css/fontawesome.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/templatemo-sixteen.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/owl.css%'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/styleforbtn.css'%}">
+    <title>Course</title>
+</head>
+{%block navbar%}
+{%include 'navbar.html'%}
+{%endblock navbar%}
+<body>
+    
+    <div class="task">
+        <h1>{{task.title}}</h1>
+        
+        <h3>Задание: <h5>{{task.task}}</h5></h3>
+        
+        <h6>Срок сдачи:{{task.date}}</h6>
+        <form action=""></form>
+    </div>
+
+
+
+
+    <script language = "text/Javascript"> 
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t){                   //declaring the array outside of the
+        if(! cleared[t.id]){                      // function makes it static and global
+            cleared[t.id] = 1;  // you could use true and false, but that's more typing
+            t.value='';         // with more chance of typos
+            t.style.color='#fff';
+            }
+        }
+      </script> 
+      <script>
+          let fields = document.querySelectorAll('.field__file');
+          Array.prototype.forEach.call(fields, function (input) {
+            let label = input.nextElementSibling,
+              labelVal = label.querySelector('.field__file-fake').innerText;
+        
+            input.addEventListener('change', function (e) {
+              let countFiles = '';
+              if (this.files && this.files.length >= 1)
+                countFiles = this.files.length;
+        
+              if (countFiles)
+                label.querySelector('.field__file-fake').innerText = 'Выбрано файлов: ' + countFiles;
+              else
+                label.querySelector('.field__file-fake').innerText = labelVal;
+            });
+          });
+      </script>
+</body>
+</html>
